@@ -1,6 +1,15 @@
 # 💳 Account Transfer API
 
-API de transferência de contas construída em **Spring Boot**, seguindo princípios de **arquitetura limpa** e integrando com **Postgres** e **Kafka** via **Docker Compose**.
+![Platform](https://img.shields.io/badge/platform-Docker-blue)
+![Language](https://img.shields.io/badge/language-Java-green)
+![Java Version](https://img.shields.io/badge/java-17-red)
+![Build](https://img.shields.io/badge/build-Maven-purple)
+![Framework](https://img.shields.io/badge/framework-SpringBoot-brightgreen)
+![Database](https://img.shields.io/badge/database-Postgres-orange)
+![Messaging](https://img.shields.io/badge/messaging-Kafka-yellow)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
+
+API de transferência de contas desenvolvida em **Spring Boot**, estruturada com princípios de **arquitetura limpa** e integrando com **Postgres** e **Kafka** através de **Docker Compose**.
 
 ---
 ## 🗂 Arquitetura
