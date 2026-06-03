@@ -3,7 +3,17 @@
 API de transferência de contas construída em **Spring Boot**, seguindo princípios de **arquitetura limpa** e integrando com **Postgres** e **Kafka** via **Docker Compose**.
 
 ---
+## 🗂 Arquitetura
 
+```mermaid
+flowchart TD
+    A[Controller] --> B[Application Service]
+    B --> C[Domain Service]
+    C --> D[Repository]
+    D --> E[(Postgres)]
+    C --> F[Messaging]
+    F --> G[(Kafka)]
+```
 ## 📂 Estrutura de pacotes
 
 Dentro de `src/main/java/com/account/transfer`:
