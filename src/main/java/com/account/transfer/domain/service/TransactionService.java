@@ -17,11 +17,14 @@ public class TransactionService {
 
     private final AccountRepository accountRepository;
     private final TransactionRepository transactionRepository;
+    private final KafkaProducerService kafkaProducerService;
 
     public TransactionService(AccountRepository accountRepository,
-                              TransactionRepository transactionRepository) {
+                              TransactionRepository transactionRepository,
+                              KafkaProducerService kafkaProducerService) {
         this.accountRepository = accountRepository;
         this.transactionRepository = transactionRepository;
+        this.kafkaProducerService = kafkaProducerService;
     }
 
     @Transactional
@@ -50,7 +53,12 @@ public class TransactionService {
         transaction.setAmount(amount);
         transaction.setCreatedAt(LocalDateTime.now());
 
-        return transactionRepository.save(transaction);
+        Transaction savedTransaction = transactionRepository.save(transaction);
+        
+        // Publica a transação no Kafka após salvar com sucesso
+        kafkaProducerService.publishTransaction(savedTransaction);
+        
+        return savedTransaction;
     }
 
     public List<Transaction> listAll() {
