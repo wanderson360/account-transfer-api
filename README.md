@@ -82,8 +82,13 @@ Se configurado o Swagger/OpenAPI:
 ```
 http://localhost:8080/swagger-ui.html
 ```
-🧪 Testes
-Para rodar os testes
+## 🧪 Testes
+![Test Framework](https://img.shields.io/badge/tests-JUnit5-blue)
+![Coverage](https://img.shields.io/badge/coverage-80%25-brightgreen)
+![Build Tool](https://img.shields.io/badge/build-Maven-purple)
+![CI](https://img.shields.io/badge/ci-GitHubActions-lightgrey)
+
+Para rodar os testes:
 ```
 ./mvnw test
 ```
